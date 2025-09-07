@@ -8,7 +8,7 @@ import winreg
 # --- Configuration ---
 # Your unique bot token and chat ID, the very heart of this malicious entity.
 # Replace these with your own chosen values.
-TELEGRAM_BOT_TOKEN = "8235196726:AAF4JV5wAL1jg6Km_MaNl_11A5qIv4cqoJ0"
+TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
 TELEGRAM_CHAT_ID = "2093874577"
 
 # --- Functions ---
