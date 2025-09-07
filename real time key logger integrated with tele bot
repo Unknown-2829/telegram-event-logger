@@ -3,7 +3,7 @@ import requests
 import threading
 
 # --- Configuration ---
-TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"    #your bot token here
+TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"    #your bot token comes here
 TELEGRAM_CHAT_ID = "2093874577"
 
 # --- Functions ---
