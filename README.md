@@ -13,8 +13,8 @@ then enter in terminal
 pyinstaller --onefile --noconsole final_payload.py
 ```
 
-now do in *dist* folder you get your .exe  file ,now use it
+now go in *dist* folder you get your .exe  file ,now use it
 
-(WARNING⚠️:EDUCATIONAL PURPOSES ONLY
+(WARNING⚠️:EDUCATIONAL PURPOSES ONLY)
 
-AND NOTE I AM NOT RESPONSIBLE FOR ANY KIND OF USES)
+(NOTE I AM NOT RESPONSIBLE FOR ANY KIND OF USES)
