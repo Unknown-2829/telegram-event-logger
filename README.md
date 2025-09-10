@@ -56,7 +56,7 @@ The project highlights concepts like:
 3. Run this command in terminal:
 
   ```bash
-pyinstaller --onefile --noconsole final_payload.py
+pyinstaller --onefile --noconsole final_payload.py 
 
 4. Go into the dist folder — you’ll find your .exe file there.
 
