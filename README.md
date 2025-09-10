@@ -49,7 +49,6 @@ The project highlights concepts like:
 
    ```bash
    pip install pyinstaller
-```
 
 2. Rename the .py script file to final_payload.py
 
@@ -58,7 +57,6 @@ The project highlights concepts like:
 
   ```bash
 pyinstaller --onefile --noconsole final_payload.py
-```
 
 4. Go into the dist folder — you’ll find your .exe file there.
 
